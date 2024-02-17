@@ -73,7 +73,7 @@ const Country = () => {
                       Top Level Domain: <span>{topLevelDomain}</span>
                     </h5>
                     <h5>
-                      Currencies: <span>{currencies.EUR.name}</span>
+                      {/* Currencies: <span>{currencies[0].name}</span> */}
                     </h5>
                     <h5>
                       Languages: <span>{languages.ell}</span>

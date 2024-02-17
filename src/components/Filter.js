@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 
 const Filter = ({
   searchInput,
@@ -32,16 +32,16 @@ const Filter = ({
       name: "Oceania",
       desc: "Oceania",
     },
-  ]
+  ];
 
   // Prevent page reload when submitting the form
   const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
 
   // Search countries
   const searchCountries = (searchValue) => {
-    setSearchInput(searchValue)
+    setSearchInput(searchValue);
 
     if (searchInput) {
       const filteredCountries = countries.filter((country) =>
@@ -49,26 +49,26 @@ const Filter = ({
           .join("")
           .toLowerCase()
           .includes(searchValue.toLowerCase())
-      )
-      setFiltered(filteredCountries)
+      );
+      setFiltered(filteredCountries);
     } else {
-      setFiltered(countries)
+      setFiltered(countries);
     }
-  }
+  };
 
   // Filter by region
 
   const filterRegions = async (region) => {
-    const url = `https://restcountries.eu/rest/v2/region/${region}`
-    const res = await fetch(url)
-    const data = await res.json()
-    setCountries(data)
-  }
+    const url = `https://restcountries.eu/rest/v3.1/region/${region}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    setCountries(data);
+  };
 
   useEffect(() => {
-    filterRegions()
+    filterRegions();
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
     <>
@@ -98,7 +98,7 @@ const Filter = ({
         </div>
       </form>
     </>
-  )
-}
+  );
+};
 
-export default Filter
+export default Filter;
